@@ -1,5 +1,5 @@
 {
-  "name": "gulp-wpstylecss",
+  "name": "@northernbeat/gulp-wpstylecss",
   "version": "0.0.1",
   "description": "A plugin for Gulp",
   "keywords": [
@@ -16,9 +16,9 @@
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "dependencies": {
-    "gulp-util": "~2.2.0",
-    "lodash": "^2.4.1",
-    "underscore.string": "^2.3.3"
+    "gulp-util": "~3.0.8",
+    "lodash": "^4.17.11",
+    "underscore.string": "^3.3.5"
   },
   "devDependencies": {
     "mocha": "*",
@@ -26,7 +26,7 @@
     "mocha-lcov-reporter": "*",
     "istanbul": "*",
     "event-stream": "*",
-    "should": "~2.1.0"
+    "should": "~13.2.3"
   },
   "engines": {
     "node": ">=0.8.0",
