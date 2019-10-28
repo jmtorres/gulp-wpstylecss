@@ -1,6 +1,6 @@
 {
     "name": "@northernbeat/gulp-wpstylecss",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Gulp plugin for creating WordPress CSS header style",
     "keywords": [
         "gulpplugin",
