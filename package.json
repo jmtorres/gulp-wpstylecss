@@ -12,20 +12,23 @@
   },
   "repository": "stefanfisk/gulp-wpstylecss",
   "scripts": {
-    "test": "istanbul test _mocha --report html -- test/*.js --reporter spec",
-    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+      "oldtest": "_mocha --report html -- test/*.js --reporter spec",
+      "oldcoveralls": "nyc.js cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+      "test": "mocha test/*.js",
+      "coverage": "nyc --reporter=html --reporter text npm test"
   },
   "dependencies": {
-    "gulp-util": "~3.0.8",
-    "lodash": "^4.17.11",
-    "underscore.string": "^3.3.5"
+    "lodash": "^4.17.15",
+    "plugin-error": "^1.0.1",
+    "underscore.string": "^3.3.5",
+    "vinyl": "^2.2.0"
   },
   "devDependencies": {
-    "mocha": "*",
     "coveralls": "*",
-    "mocha-lcov-reporter": "*",
-    "istanbul": "*",
     "event-stream": "*",
+    "mocha": "*",
+    "mocha-lcov-reporter": "*",
+    "nyc": "^14.1.1",
     "should": "~13.2.3"
   },
   "engines": {
