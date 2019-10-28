@@ -1,39 +1,36 @@
 {
-  "name": "@northernbeat/gulp-wpstylecss",
-  "version": "0.0.1",
-  "description": "A plugin for Gulp",
-  "keywords": [
-    "gulpplugin",
-    "wordpress"
-  ],
-  "author": {
-    "name": "Stefan Fisk",
-    "url": "http://stefanfisk.com"
-  },
-  "repository": "stefanfisk/gulp-wpstylecss",
-  "scripts": {
-      "oldtest": "_mocha --report html -- test/*.js --reporter spec",
-      "oldcoveralls": "nyc.js cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-      "test": "mocha test/*.js",
-      "coverage": "nyc --reporter=html --reporter text npm test"
-  },
-  "dependencies": {
-    "lodash": "^4.17.15",
-    "plugin-error": "^1.0.1",
-    "underscore.string": "^3.3.5",
-    "vinyl": "^2.2.0"
-  },
-  "devDependencies": {
-    "coveralls": "*",
-    "event-stream": "*",
-    "mocha": "*",
-    "mocha-lcov-reporter": "*",
-    "nyc": "^14.1.1",
-    "should": "~13.2.3"
-  },
-  "engines": {
-    "node": ">=0.8.0",
-    "npm": ">=1.2.10"
-  },
-  "license": "MIT"
+    "name": "@northernbeat/gulp-wpstylecss",
+    "version": "0.0.2",
+    "description": "Gulp plugin for creating WordPress CSS header style",
+    "keywords": [
+        "gulpplugin",
+        "wordpress"
+    ],
+    "author": {
+        "name": "Stefan Fisk",
+        "url": "http://stefanfisk.com"
+    },
+    "repository": "northernbeat/gulp-wpstylecss",
+    "scripts": {
+        "test": "mocha test/*.js",
+        "coverage": "nyc --reporter=html --reporter text npm test"
+    },
+    "dependencies": {
+        "lodash": "^4.17.15",
+        "plugin-error": "^1.0.1",
+        "underscore.string": "^3.3.5",
+        "vinyl": "^2.2.0"
+    },
+    "devDependencies": {
+        "event-stream": "*",
+        "mocha": "*",
+        "mocha-lcov-reporter": "*",
+        "nyc": "^14.1.1",
+        "should": "~13.2.3"
+    },
+    "engines": {
+        "node": ">=0.8.0",
+        "npm": ">=1.2.10"
+    },
+    "license": "MIT"
 }
