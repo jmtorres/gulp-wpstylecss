@@ -13,6 +13,7 @@ module.exports = function(options)
     options = _.defaults(options || {}, {
         path:        "style.css",
         name:        _s.titleize(_s.humanize(pkg.name)),
+        title:       pkg.title,
         description: pkg.description,
         version:     pkg.version,
         uri:         pkg.homepage,
@@ -22,10 +23,6 @@ module.exports = function(options)
         license:     pkg.license,
         licenseUri:  null
     });
-
-    if (pkg.title) {
-        options.name = _s.titleize(_s.humanize(pkg.title));
-    }
 
     if (!options.path) {
         throw new PluginError("gulp-wpstylecss", "`path` is required.");
@@ -48,7 +45,11 @@ module.exports = function(options)
     */
     var contents = "/*\n";
 
-    contents += "Theme Name:     " + options.name + "\n";
+    if (options.title) {
+        contents += "Theme Name:     " + options.title + "\n";
+    } else {
+        contents += "Theme Name:     " + options.name + "\n";
+    }
 
     if (options.uri) {
         contents += "Theme URI:      " + options.uri + "\n";
