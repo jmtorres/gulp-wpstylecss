@@ -12,7 +12,7 @@ module.exports = function(options)
 
     options = _.defaults(options || {}, {
         path:        "style.css",
-        name:        _s.titleize(_s.humanize(pkg.title)),
+        name:        _s.titleize(_s.humanize(pkg.name)),
         description: pkg.description,
         version:     pkg.version,
         uri:         pkg.homepage,
@@ -22,6 +22,10 @@ module.exports = function(options)
         license:     pkg.license,
         licenseUri:  null
     });
+
+    if (pkg.title) {
+        options.name = _s.titleize(_s.humanize(pkg.title));
+    }
 
     if (!options.path) {
         throw new PluginError("gulp-wpstylecss", "`path` is required.");
