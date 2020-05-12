@@ -6,13 +6,13 @@ var _           = require("lodash");
 var _s          = require("underscore.string");
 var pkg         = JSON.parse(fs.readFileSync("package.json", {encoding: "utf8"}));
 
-module.exports = function (options)
+module.exports = function(options)
 {
     "use strict";
 
     options = _.defaults(options || {}, {
         path:        "style.css",
-        name:        _s.titleize(_s.humanize(pkg.name)),
+        name:        _s.titleize(_s.humanize(pkg.title)),
         description: pkg.description,
         version:     pkg.version,
         uri:         pkg.homepage,
@@ -32,7 +32,7 @@ module.exports = function (options)
     }
 
     /*
-      Theme Name:     <%= options.name %>
+      Theme Name:     <%= options.title %>
       Theme URI:      <%= options.homepage %>
       Author:         <%= options.author.name %>
       Author URI:     <%= options.author.url %>
