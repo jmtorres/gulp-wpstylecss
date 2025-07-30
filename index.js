@@ -10,7 +10,7 @@ module.exports = function(options)
 {
     "use strict";
 
-    options = _.defaults(options || {}, {
+    options = _.defaults(options || {}, pkg.wpTheme || {}, {
         path:        "style.css",
         name:        _s.titleize(_s.humanize(pkg.name)),
         title:       pkg.title,
@@ -81,6 +81,14 @@ module.exports = function(options)
 
     if (options.tags) {
         contents += "Tags:           " + options.tags + "\n";
+    }
+
+    if (optons.textDomain) {
+        contents += "Text Domain:    " + options.textDomain + "\n";
+    }
+    
+    if (optons.domainPath) {
+        contents += "Domain Path:    " + options.domainPath + "\n";
     }
 
     contents += "*/\n";
