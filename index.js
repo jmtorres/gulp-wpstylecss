@@ -32,66 +32,66 @@ module.exports = function(options)
         throw new PluginError("gulp-wpstylecss", "`name` is required.");
     }
 
-    /*
-      Theme Name:     <%= options.title %>
-      Theme URI:      <%= options.homepage %>
-      Author:         <%= options.author.name %>
-      Author URI:     <%= options.author.url %>
-      Description:    <%= options.description %>
-      Version:        <%= options.version %>
-      License:        <%= options.license %>
-      License URI:    <%= options.licenseUri %>
-      Tags:           <%= options.keywords %>
-    */
-    var contents = "/*\n";
+    /**
+     * Theme Name:     <%= options.title %>
+     * Theme URI:      <%= options.homepage %>
+     * Author:         <%= options.author.name %>
+     * Author URI:     <%= options.author.url %>
+     * Description:    <%= options.description %>
+     * Version:        <%= options.version %>
+     * License:        <%= options.license %>
+     * License URI:    <%= options.licenseUri %>
+     * Tags:           <%= options.keywords %>
+     */
+    var contents = "/**\n";
 
     if (options.title) {
-        contents += "Theme Name:     " + options.title + "\n";
+        contents += " * Theme Name:     " + options.title + "\n";
     } else {
-        contents += "Theme Name:     " + options.name + "\n";
+        contents += " * Theme Name:     " + options.name + "\n";
     }
 
     if (options.uri) {
-        contents += "Theme URI:      " + options.uri + "\n";
+        contents += " * Theme URI:      " + options.uri + "\n";
     }
 
     if (options.author) {
-        contents += "Author:         " + options.author + "\n";
+        contents += " * Author:         " + options.author + "\n";
     }
 
     if (options.authorUri) {
-        contents += "Author URI:     " + options.authorUri + "\n";
+        contents += " * Author URI:     " + options.authorUri + "\n";
     }
 
     if (options.description) {
-        contents += "Description:    " + options.description + "\n";
+        contents += " * Description:    " + options.description + "\n";
     }
 
     if (options.version) {
-        contents += "Version:        " + options.version + "\n";
+        contents += " * Version:        " + options.version + "\n";
     }
 
     if (options.license) {
-        contents += "License:        " + options.license + "\n";
+        contents += " * License:        " + options.license + "\n";
     }
 
     if (options.licenseUri) {
-        contents += "License URI:    " + options.licenseUri + "\n";
+        contents += " * License URI:    " + options.licenseUri + "\n";
     }
 
     if (options.tags) {
-        contents += "Tags:           " + options.tags + "\n";
+        contents += " * Tags:           " + options.tags + "\n";
     }
 
     if (options.textDomain) {
-        contents += "Text Domain:    " + options.textDomain + "\n";
+        contents += " * Text Domain:    " + options.textDomain + "\n";
     }
     
     if (options.domainPath) {
-        contents += "Domain Path:    " + options.domainPath + "\n";
+        contents += " * Domain Path:    " + options.domainPath + "\n";
     }
 
-    contents += "*/\n";
+    contents += " */\n";
 
     var stream = new Readable({objectMode: true});
 
