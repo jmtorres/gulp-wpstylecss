@@ -83,11 +83,11 @@ module.exports = function(options)
         contents += "Tags:           " + options.tags + "\n";
     }
 
-    if (optons.textDomain) {
+    if (options.textDomain) {
         contents += "Text Domain:    " + options.textDomain + "\n";
     }
     
-    if (optons.domainPath) {
+    if (options.domainPath) {
         contents += "Domain Path:    " + options.domainPath + "\n";
     }
 
